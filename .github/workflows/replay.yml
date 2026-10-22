@@ -1,0 +1,22 @@
+name: Agent risk replay gate
+on:
+  push:
+  pull_request:
+jobs:
+  test-and-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Safe replay must pass
+        run: python -m geordie_gate.cli --events examples/safe.jsonl --baseline examples/baseline.json --output safe-report.json
+      - name: Risky replay must fail
+        run: |
+          set +e
+          python -m geordie_gate.cli --events examples/risky.jsonl --baseline examples/baseline.json --output risky-report.json
+          code=$?
+          test "$code" -eq 2
