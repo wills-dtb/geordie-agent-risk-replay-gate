@@ -1,0 +1,2 @@
+{"run_id":"safe-1","event_id":"e1","agent_id":"support-agent","action":"read","tool":"crm.read","resource":"customer/123","environment":"production","decision":"allowed","data_classification":"internal"}
+{"run_id":"safe-1","event_id":"e2","agent_id":"support-agent","action":"send","tool":"email.send","resource":"customer/123","environment":"production","destination_domain":"example-customer.test","data_classification":"confidential","decision":"allowed"}
