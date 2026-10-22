@@ -1,0 +1,5 @@
+{"run_id":"risky-1","event_id":"e1","agent_id":"support-agent","action":"read","tool":"crm.read","resource":"customer/123","environment":"production","decision":"denied","data_classification":"confidential"}
+{"run_id":"risky-1","event_id":"e2","agent_id":"support-agent","action":"export","tool":"email.send","resource":"customer/123","environment":"production","destination_domain":"untrusted.example","data_classification":"restricted","decision":"allowed"}
+{"run_id":"risky-1","event_id":"e3","agent_id":"ops-agent","action":"grant_admin","tool":"cloud.admin","resource":"prod/iam","environment":"production","decision":"allowed"}
+{"run_id":"risky-1","event_id":"e4","agent_id":"support-agent","action":"write","tool":"unknown.tool","resource":"customer/123","environment":"production","decision":"allowed"}
+{"run_id":"risky-1","event_id":"e4","agent_id":"support-agent","action":"write","tool":"unknown.tool","resource":"customer/123","environment":"production","decision":"allowed"}
