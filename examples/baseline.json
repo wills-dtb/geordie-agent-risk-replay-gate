@@ -1,0 +1,4 @@
+{
+ "allowed_tools":{"support-agent":["crm.read","email.send","tickets.update"],"ops-agent":["deploy.read","cloud.admin"]},
+ "approved_external_domains":["example-customer.test"]
+}
